@@ -84,12 +84,12 @@ pairBtn.addEventListener('click', async () => {
     
     if (resp.ok && data.code) {
       resultDiv.innerHTML = `
-        <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px;">
-          <div>
-            <div style="font-size: 1.1em;">✅ Pairing Code: <strong style="letter-spacing: 2px;">${data.code}</strong></div>
-            <div style="font-size: 0.85em; opacity: 0.8;">Number: ${sanitized}</div>
+        <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 15px; text-align: left;">
+          <div style="flex: 1; min-width: 200px;">
+            <div style="font-size: 1.1em;">✅ Pairing Code: <strong style="letter-spacing: 2px; font-size: 1.2em; display: inline-block; margin-top: 5px;">${data.code}</strong></div>
+            <div style="font-size: 0.85em; opacity: 0.8; margin-top: 4px;">Number: ${sanitized}</div>
           </div>
-          <button id="copy-btn" class="btn-primary" style="padding: 8px 15px; font-size: 0.9em; min-width: 110px; margin: 0;">
+          <button id="copy-btn" class="btn-primary" style="padding: 10px 15px; font-size: 0.95em; min-width: 120px; margin: 0; flex-shrink: 0; width: auto;">
             <i class="fas fa-copy"></i> Copy
           </button>
         </div>
