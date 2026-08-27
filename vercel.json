@@ -1,0 +1,10 @@
+{
+  "functions": {
+    "api/**/*.js": {
+      "runtime": "nodejs18.x"
+    }
+  },
+  "env": {
+    "BACKEND_URL": "https://mazari-bot-01-f026a4cd53d1.herokuapp.com"
+  }
+}
