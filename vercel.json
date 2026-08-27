@@ -4,7 +4,7 @@
       "runtime": "nodejs18.x"
     }
   },
-  "env": {
-    "BACKEND_URL": "https://mazari-bot-01-f026a4cd53d1.herokuapp.com"
-  }
+  "builds": [
+    { "src": "api/**/*.js", "use": "@vercel/node" }
+  ]
 }
