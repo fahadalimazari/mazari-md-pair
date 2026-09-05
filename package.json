@@ -1,9 +1,0 @@
-{
-  "name": "mazari-md-pair",
-  "version": "1.0.0",
-  "private": true,
-  "description": "Vercel frontend with pairing proxy",
-  "scripts": {
-    "dev": "vercel dev"
-  }
-}
