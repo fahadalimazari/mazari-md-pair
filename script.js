@@ -80,18 +80,9 @@ pairBtn.addEventListener('click', async () => {
       body: JSON.stringify({ number: sanitized })
     });
     
-    let data;
-    try {
-      data = await resp.json();
-    } catch {
-      throw new Error(`Server returned HTTP ${resp.status}`);
-    }
+    const data = await resp.json();
     
-    if (!resp.ok) {
-      throw new Error(data?.message || data?.error || `HTTP ${resp.status}`);
-    }
-    
-    if (data.code) {
+    if (resp.ok && data.code) {
       resultDiv.innerHTML = `
         <div class="pairing-result-box">
           <div class="pairing-code-content">
@@ -142,11 +133,7 @@ pairBtn.addEventListener('click', async () => {
     }
   } catch (e) {
     console.error(e);
-    // Properly distinguish between network errors and API errors
-    const errMsg = e.message.includes('Failed to fetch') || e.message.includes('NetworkError')
-      ? 'Network error – unable to contact server.'
-      : e.message;
-    showMessage(`❌ ${errMsg}`, 'error');
+    showMessage('❌ Network error – unable to contact server.', 'error');
     pairBtn.disabled = false;
     btnText.textContent = 'GENERATE PAIRING CODE';
   }
